@@ -33,7 +33,7 @@ export default function OverView(){
     const [comment,setComment] = useState('')
     const [isLiked,setIsLiked] = useState(false)
     useEffect(()=>{
-        axios.get(`http://www.omdbapi.com/?t=${movie.original_title}&apikey=bc1d472`)
+        axios.get(`https://www.omdbapi.com/?t=${movie.original_title}&apikey=bc1d472`)
         .then((res)=>{
             console.log(res.data)
             setPoster(res.data.Poster)
