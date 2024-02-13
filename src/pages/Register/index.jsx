@@ -7,7 +7,7 @@ export default function Register() {
     const [confirmPassword, setConfirmPassword] = useState('')
     const register = async () => {
         if(password === confirmPassword) {
-            await axios.post('https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/register',{
+            await axios.post('https://reelzeal-backend.onrender.com/register',{
                 username: username,
                 password: password
             

@@ -63,7 +63,7 @@ export default function Recommendations() {
     useEffect(() => {
 
         if(!isGenreSetted){
-            axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_genre_recommends?username=${localStorage.getItem('username')}`,{
+            axios.get(`https://reelzeal-backend.onrender.com/get_genre_recommends?username=${localStorage.getItem('username')}`,{
                
             }).then((res)=>{                
                 setGenreMovieList(res.data.movie_list)
@@ -73,7 +73,7 @@ export default function Recommendations() {
             })
         }
         if(!isLiked){
-            axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_liked_movies?username=${localStorage.getItem('username')}`,{
+            axios.get(`https://reelzeal-backend.onrender.com/get_liked_movies?username=${localStorage.getItem('username')}`,{
             }).then((res)=>{                
                 setLikedMovies(res.data.liked_movies)        
                 setIsLiked(true)

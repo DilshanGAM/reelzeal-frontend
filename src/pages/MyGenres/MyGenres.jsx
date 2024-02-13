@@ -43,7 +43,7 @@ export default function MyGenres(){
     const [myGenresSetted,setMyGenresSetted] = useState(true)
  
     useEffect(()=>{
-        axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_my_genres?username=${localStorage.getItem('username')}`).then((res)=>{
+        axios.get(`https://reelzeal-backend.onrender.com/get_my_genres?username=${localStorage.getItem('username')}`).then((res)=>{
                        
             if(res.data.my_genres!==''){
                 setMyGenres(res.data.my_genres.split(" "))

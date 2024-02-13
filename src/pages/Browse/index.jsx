@@ -52,7 +52,7 @@ export default function Browse(){
     const [totalPages,setTotalPages] = useState(1)
     const [isRefresh,setIsRefresh] = useState(false)
     useEffect(()=>{
-        axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_movies?page=${currentPage}&genre=${genre}&name=${query}&rating=${Rating}`).then((res)=>{
+        axios.get(`https://reelzeal-backend.onrender.com/get_movies?page=${currentPage}&genre=${genre}&name=${query}&rating=${Rating}`).then((res)=>{
             console.log(res.data)
             setMovies(res.data.movies||[])
             setTotalPages(res.data.total_pages)

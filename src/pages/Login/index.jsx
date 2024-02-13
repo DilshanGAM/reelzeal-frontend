@@ -5,7 +5,7 @@ export default function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const login = async () => {
-        await axios.post('https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/login',{
+        await axios.post('https://reelzeal-backend.onrender.com/login',{
             username: username,
             password: password
         }).then((res)=>{

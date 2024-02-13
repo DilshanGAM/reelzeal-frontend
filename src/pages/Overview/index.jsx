@@ -42,7 +42,7 @@ export default function OverView(){
         .catch((err)=>{
             console.log(err)
         })
-        axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_comments?movie_title=${movie.original_title}`).then((res)=>{
+        axios.get(`https://reelzeal-backend.onrender.com/get_comments?movie_title=${movie.original_title}`).then((res)=>{
             console.log(res.data)
             const tempComments = []
             for(let i=0;i<res.data.length;i++){
@@ -54,7 +54,7 @@ export default function OverView(){
             console.log(err)
         }
         )
-        axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/check_like?username=${localStorage.getItem('username')}&movie_title=${movie.original_title}`).then((res)=>{
+        axios.get(`https://reelzeal-backend.onrender.com/check_like?username=${localStorage.getItem('username')}&movie_title=${movie.original_title}`).then((res)=>{
             console.log(res.data)
             if(res.data.liked){
                 setIsLiked(true)
@@ -70,7 +70,7 @@ export default function OverView(){
     },[isCommentsSetted,isLiked])
     const pressLike = ()=>{
         if(isLiked){
-            axios.post('https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/delete_like',{
+            axios.post('https://reelzeal-backend.onrender.com/delete_like',{
                 username: localStorage.getItem('username'),
                 movie_title: movie.original_title
             }).then((res)=>{
@@ -84,7 +84,7 @@ export default function OverView(){
             )
         }
         else{
-            axios.post('https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/add_like',{
+            axios.post('https://reelzeal-backend.onrender.com/add_like',{
                 username: localStorage.getItem('username'),
                 movie_title: movie.original_title
             }).then((res)=>{
@@ -101,7 +101,7 @@ export default function OverView(){
     console.log(movie)
     const submitComment = ()=>{
         const username = localStorage.getItem('username')
-        axios.post('https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/add_comment',{
+        axios.post('https://reelzeal-backend.onrender.com/add_comment',{
             username: username,
             movie_title: movie.original_title,
             comment: comment

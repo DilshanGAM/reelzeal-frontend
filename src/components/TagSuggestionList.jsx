@@ -11,7 +11,7 @@ export default function TagSuggestionList(props) {
     useEffect(()=>{
 
         contentMovieList
-        axios.get(`https://flask-service.pq2gr82bhdo0m.us-east-1.cs.amazonlightsail.com/get_tag_recommends?movie=${movie}`).then(
+        axios.get(`https://reelzeal-backend.onrender.com/get_tag_recommends?movie=${movie}`).then(
             (res)=>{                
                 console.log(res.data.list)
                 setContentMovieList(res.data.list)
